@@ -7,7 +7,8 @@ All resource definitions have short URLs that you can type directly on the comma
 ## Resources
 
 - **Deployment** — a Deployment running three NGINX Pods
-- **Service** — a Service exposing the Pods of the above Deployment
+- **Service** — a Service (ClusterIP) exposing the Pods of the above Deployment
+- **Headless Service** — a headless Service exposing the Pods of the above Deployment
 - **Pod** — a Pod running NGINX
 - **Jump Pod** — a Pod to "exec" into ([see below](#jump-pod-instructions))
 
@@ -17,6 +18,7 @@ All resource definitions have short URLs that you can type directly on the comma
 
 > <https://bit.ly/k8s-sample-deployment><br />
 <https://bit.ly/k8s-sample-service><br />
+<https://bit.ly/k8s-sample-headless-service><br />
 <https://bit.ly/k8s-sample-pod><br />
 <https://bit.ly/k8s-sample-jump-pod>
 
@@ -24,6 +26,7 @@ All resource definitions have short URLs that you can type directly on the comma
 
 > <https://raw.githubusercontent.com/weibeld/k8s-sample-resources/master/deployment.yaml><br />
 <https://raw.githubusercontent.com/weibeld/k8s-sample-resources/master/service.yaml><br />
+<https://raw.githubusercontent.com/weibeld/k8s-sample-resources/master/headless-service.yaml><br />
 <https://raw.githubusercontent.com/weibeld/k8s-sample-resources/master/pod.yaml><br />
 <https://raw.githubusercontent.com/weibeld/k8s-sample-resources/master/jump-pod.yaml>
 
