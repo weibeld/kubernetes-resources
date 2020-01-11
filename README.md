@@ -9,7 +9,7 @@ All resource definitions have short URLs that you can type directly on the comma
 - **Deployment** — a Deployment running three NGINX Pods
 - **Service** — a Service exposing the Pods of the above Deployment
 - **Pod** — a Pod running NGINX
-- **Jump Pod** — a Pod to "exec" into (see [below](#jump-pod-instructions))
+- **Jump Pod** — a Pod to "exec" into ([see below](#jump-pod-instructions))
 
 ## URLs
 
