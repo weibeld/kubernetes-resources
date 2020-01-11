@@ -2,14 +2,14 @@
 
 Some sample Kubernetes resource definitions to get you started quickly for some experimentation in Kubernetes.
 
-All resource definitions have short URLs that are easy to remember.
+All resource definitions have short URLs that you can type directly on the command line.
 
 ## Resources
 
-- Deployment — a Deployment running three NGINX Pods
-- Service — a Service exposing the Pods of the above Deployment
-- Pod — a Pod running NGINX
-- Jump Pod — a Pod to "exec" into
+- **Deployment** — a Deployment running three NGINX Pods
+- **Service** — a Service exposing the Pods of the above Deployment
+- **Pod** — a Pod running NGINX
+- **Jump Pod** — a Pod to "exec" into
 
 ## URLs
 
@@ -63,10 +63,10 @@ Create the jump Pod with:
 kubectl apply -f https://bit.ly/k8s-sample-jump-pod
 ```
 
-When the Pod is running, open a shell session "exec" into it with:
+When the Pod is running, "exec" into it with:
 
 ```bash
 kubectl exec -ti jump-pod bash
 ```
 
-The container image of the Pod is [weibeld/ubuntu-networking](https://github.com/weibeld/docker-ubuntu-networking). This is Ubuntu with many networking tools installed. So, you can use tools like `curl` , `dig`, etc.
+The container image of the Pod is [weibeld/ubuntu-networking](https://github.com/weibeld/docker-ubuntu-networking). This is Ubuntu with many networking tools installed. So, you can use `curl` , `dig`, etc. right away.
