@@ -4,11 +4,12 @@ Some sample Kubernetes resource definitions that are directly accessible through
 
 ## Example usage
 
-Create a Deployment and a Service exposing it:
+Create a Deployment, a Service exposing it, and a "jump" Pod:
 
 ```bash
 kubectl apply -f https://bit.ly/k8s-sample-deployment
 kubectl apply -f https://bit.ly/k8s-sample-service
+kubectl apply -f https://bit.ly/k8s-sample-jump-pod
 ```
 
 ## Provided resource definitions
