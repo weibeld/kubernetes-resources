@@ -1,16 +1,23 @@
-# K8s sample resources
+# Kubernetes sample resources
 
-Some sample Kubernetes resource definitions to get you started quickly for some experimentation in Kubernetes.
+Some sample Kubernetes resource definitions that are directly accessible through URLs.
 
-All resource definitions have short URLs that you can type directly on the command line.
+## Example usage
 
-## Resources
+Create a Deployment and a Service that exposes it:
+
+```bash
+kubectl apply -f https://bit.ly/k8s-sample-deployment
+kubectl applly -f https://bit.ly/k8s-sample-service
+```
+
+## Provided resource definitions
 
 - **Deployment** — a Deployment running three NGINX Pods
 - **Service** — a Service (ClusterIP) exposing the Pods of the above Deployment
 - **Headless Service** — a headless Service exposing the Pods of the above Deployment
-- **Pod** — a Pod running NGINX
-- **Jump Pod** — a Pod to "exec" into ([see below](#jump-pod-instructions))
+- **Pod** — a single Pod running NGINX
+- **Jump Pod** — a single Pod intended for "exec"ing ([see below](#jump-pod-instructions))
 
 ## URLs
 
@@ -30,32 +37,18 @@ All resource definitions have short URLs that you can type directly on the comma
 <https://raw.githubusercontent.com/weibeld/k8s-sample-resources/master/pod.yaml><br />
 <https://raw.githubusercontent.com/weibeld/k8s-sample-resources/master/jump-pod.yaml>
 
-## Usage
+## General usage
 
-Create resource in Kubernetes:
+Directly apply a resource definition:
 
 ```bash
 kubectl apply -f <url>
 ```
 
-Download resource definiton:
+Download a resource definiton:
 
 ```bash
 curl -L <url>
-```
-
-## Examples
-
-Create a Deployment:
-
-```bash
-kubectl apply -f https://bit.ly/k8s-sample-deployment
-```
-
-Download the Pod resource definition for local editing:
-
-```bash
-curl -L https://bit.ly/k8s-sample-pod >my-pod.yaml
 ```
 
 ## Jump Pod instructions
@@ -72,4 +65,4 @@ When the Pod is running, "exec" into it with:
 kubectl exec -ti jump-pod bash
 ```
 
-The container image of the Pod is [weibeld/ubuntu-networking](https://github.com/weibeld/docker-ubuntu-networking). This is Ubuntu with many networking tools installed. So, you can use `curl` , `dig`, etc. right away.
+The Pod runs a [weibeld/ubuntu-networking](https://github.com/weibeld/docker-ubuntu-networking) container, which is Ubuntu 18.04 with some common networking tools installed.
