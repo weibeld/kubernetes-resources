@@ -4,20 +4,20 @@ Some sample Kubernetes resource definitions that are directly accessible through
 
 ## Example usage
 
-Create a Deployment and a Service that exposes it:
+Create a Deployment and a Service exposing it:
 
 ```bash
 kubectl apply -f https://bit.ly/k8s-sample-deployment
-kubectl applly -f https://bit.ly/k8s-sample-service
+kubectl apply -f https://bit.ly/k8s-sample-service
 ```
 
 ## Provided resource definitions
 
-- **Deployment** — a Deployment running three NGINX Pods
-- **Service** — a Service (ClusterIP) exposing the Pods of the above Deployment
-- **Headless Service** — a headless Service exposing the Pods of the above Deployment
-- **Pod** — a single Pod running NGINX
-- **Jump Pod** — a single Pod intended for "exec"ing ([see below](#jump-pod-instructions))
+- **[Deployment](deployment.yaml):** a Deployment running three NGINX Pods
+- **[Service](service.yaml):** a Service (ClusterIP) exposing the Pods of the above Deployment
+- **[Headless Service](headless-service.yaml):** a headless Service exposing the Pods of the above Deployment
+- **[Pod](pod.yaml):** a single Pod running NGINX
+- **[Jump Pod](jump-pod.yaml):** a single Pod intended for "exec"ing ([see below](#jump-pod-instructions))
 
 ## URLs
 
