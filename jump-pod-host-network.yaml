@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: jump-pod-host-network
+spec:
+  containers:
+  - image: weibeld/ubuntu-networking
+    name: ubuntu
+    command: ["sleep", "infinity"]
+  hostNetwork: true
