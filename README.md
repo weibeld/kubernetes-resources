@@ -7,10 +7,12 @@ Some sample Kubernetes resource definitions that are directly accessible through
 Create a Deployment, a Service exposing it, a jump Pod, and a jump Pod in the host network:
 
 ```bash
-kubectl apply -f https://bit.ly/k8s-sample-deployment
-kubectl apply -f https://bit.ly/k8s-sample-service
-kubectl apply -f https://bit.ly/k8s-sample-jump-pod
-kubectl apply -f https://bit.ly/k8s-sample-jump-pod-host-network
+{
+  kubectl apply -f https://bit.ly/k8s-sample-deployment
+  kubectl apply -f https://bit.ly/k8s-sample-service
+  kubectl apply -f https://bit.ly/k8s-sample-jump-pod
+  kubectl apply -f https://bit.ly/k8s-sample-jump-pod-host-network
+}
 ```
 
 ## Provided resource definitions
