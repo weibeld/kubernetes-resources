@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-daemonset-nginx
+spec:
+  selector:
+    app: daemonset-nginx
+  ports:
+  - port: 80
+    targetPort: 80

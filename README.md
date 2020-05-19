@@ -1,34 +1,47 @@
 # Kubernetes sample resources
 
-Some sample Kubernetes resource definitions that are directly accessible through URLs.
+Some sample Kubernetes resource definitions accessibel through short URLs.
 
 ## Example usage
 
-Create a Deployment, a Service exposing it, a jump Pod, and a jump Pod in the host network:
+Create an NGINX Deployment, a Service exposing the Deployment, and a jump Pod:
 
 ```bash
-{
-  kubectl apply -f https://bit.ly/k8s-sample-deployment
-  kubectl apply -f https://bit.ly/k8s-sample-service
-  kubectl apply -f https://bit.ly/k8s-sample-jump-pod
-  kubectl apply -f https://bit.ly/k8s-sample-jump-pod-host-network
-}
+kubectl apply -f https://bit.ly/k8s-sample-deployment
+kubectl apply -f https://bit.ly/k8s-sample-service
+kubectl apply -f https://bit.ly/k8s-sample-jump-pod
 ```
 
-## Provided resource definitions
+## Resource definitions
 
-- **[Deployment](deployment.yaml):** a Deployment running three NGINX Pods
-- **[Service](service.yaml):** a Service (ClusterIP) exposing the Pods of the above Deployment
-- **[Headless Service](headless-service.yaml):** a headless Service exposing the Pods of the above Deployment
-- **[Pod](pod.yaml):** a Pod running NGINX
-- **[Jump Pod](jump-pod.yaml):** a Pod running Ubuntu for "execing" into
-- **[Jump Pod in the host network](jump-pod-host-network.yaml):** a Pod running Ubuntu for "execing" into, running in the host network
+### Deployments
+
+- [`deployment-nginx.yaml`](deployment-nginx.yaml): Deployment with 3 replicas of [NGINX](https://hub.docker.com/_/nginx) Pods with an `app=deployment-nginx` label
+- [`deployment-alpine.yaml`](deployment-alpine.yaml): Deployment with 3 replicas of [Alpine](https://hub.docker.com/_/alpine) Pods with an `app=deployment-alpine` label
+
+### DaemonSets
+
+- [`daemonset-nginx.yaml`](daemonset-nginx.yaml): DaemonSet of [NGINX](https://hub.docker.com/_/nginx) Pods with an `app=daemonset-nginx` label
+- [`daemonset-alpine.yaml`](deployment-alpine.yaml): DaemonSet of [Alpine](https://hub.docker.com/_/alpine) Pods with an `app=daemonset-alpine` label
+
+### Services 
+
+- [`service-deployment-nginx.yaml`](service-deployment-nginx.yaml): Service exposing Pods with an `app=deployment-nginx` label
+- [`service-deployment-nginx-headless.yaml`](service-deployment-nginx-headless.yaml): Headless Service exposing Pods with an `app=deployment-nginx` label
+- [`service-daemonset-nginx.yaml`](service-daemonset-nginx.yaml): Service exposing Pods with an `app=daemonset-nginx` label
+- [`service-daemonset-nginx-headless.yaml`](service-daemonset-nginx-headless.yaml): Headless Service exposing Pods with an `app=daemonset-nginx` label
+
+### Jump Pods
+
+- [`jump-pod.yaml`](jump-pod.yaml): jump Pod running the [`weibeld/ubuntu-networking`](https://hub.docker.com/repository/docker/weibeld/ubuntu-networking) container image
+- [`jump-pod-host-network.yaml`](jump-pod-host-network.yaml): jump Pod in the host network running the [`weibeld/ubuntu-networking`](https://hub.docker.com/repository/docker/weibeld/ubuntu-networking) container image
 
 ## URLs
 
 ### Short URLs
 
 > <https://bit.ly/k8s-sample-deployment><br />
+<https://bit.ly/k8s-sample-deployment-alpine><br />
 <https://bit.ly/k8s-sample-service><br />
 <https://bit.ly/k8s-sample-headless-service><br />
 <https://bit.ly/k8s-sample-pod><br />
