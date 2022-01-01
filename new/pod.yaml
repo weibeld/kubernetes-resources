@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: jump-pod
+  #labels:
+  #  sidecar.istio.io/inject: "true"
+spec:
+  containers:
+  - name: main
+    image: remote-docker.artifactory.swisscom.com/weibeld/ubuntu-networking
+    command: [sleep, infinity]
+#    env:
+#      - name: http_proxy
+#        value: http://serverproxy.bitintra.ch:8080
+#      - name: https_proxy
+#        value: http://serverproxy.bitintra.ch:8080
+    imagePullPolicy: Always
+  volumes:
+    - name: foo
